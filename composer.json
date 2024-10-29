@@ -1,0 +1,13 @@
+{
+    "name": "qi/qi",
+    "description": "Rede social para encontrar prestadores de serviços",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}

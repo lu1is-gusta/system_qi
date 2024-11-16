@@ -2,10 +2,10 @@
 
 namespace src\Controllers;
 
-class HomeController extends Controller {
+class UsersController extends Controller {
 
     public function index() {
-        return Controller::view("home");
+        return Controller::view("user");
     }
 
     // public function store(){

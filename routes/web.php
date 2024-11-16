@@ -15,20 +15,21 @@ function loadRoute(string $controller, string $action) {
             throw new Exception("O método {$action} da classe {$controller} não foi encontrado");
         }
 
-        $instanceController->$action();
+        $instanceController->$action((object)$_REQUEST);
     } catch (Exception $e){
-        return $e->getMessage();
+        echo $e->getMessage();
     }
 
 }
 
 $router = [
     "GET" => [
-        "/" => loadRoute("HomeController", "index"),
+        "/System_qi/index.php/" => fn () => loadRoute("HomeController", "index"),
+        "/System_qi/index.php/users" =>  fn () => loadRoute("UsersController", "index"),
     ],
 
     "POST" => [
-        "/users/create" => loadRoute("UsersController", "create"),
+        // "/users/create" => loadRoute("UsersController", "create"),
         // "users/createTrabalhador"
     ]
 ];

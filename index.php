@@ -13,13 +13,14 @@ try {
     }
 
     if(!array_key_exists($uri, $router[$requestMethod])){
-        throw new Exception('a rota não existe');
+        $message = 'a rota ' . $uri . ' não existe';
+        throw new Exception($message);
     }
 
-    $router[$requestMethod][$uri];
-
+    $controller = $router[$requestMethod][$uri];
+    $controller();
 } catch (Exception $e) {
-    $e->getMessage();
+    echo $e->getMessage();
 }
 
 // Subi o projeto com as dependências só pra ter uma ideia de como é. Recomendo que criem um arquivo ".gitignore" para por os dados sensíveis.

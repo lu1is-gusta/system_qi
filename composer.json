@@ -9,5 +9,7 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "league/plates": "v3.x-dev"
+    }
 }

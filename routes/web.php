@@ -22,10 +22,12 @@ function loadRoute(string $controller, string $action) {
 
 }
 
+$defaultURL = "/System_qi/index.php";
+
 $router = [
     "GET" => [
-        "/System_qi/index.php/" => fn () => loadRoute("HomeController", "index"),
-        "/System_qi/index.php/users" =>  fn () => loadRoute("UsersController", "index"),
+        $defaultURL."/" => fn () => loadRoute("HomeController", "index"),
+        $defaultURL."/users" =>  fn () => loadRoute("UsersController", "index"),
     ],
 
     "POST" => [
